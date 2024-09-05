@@ -8,9 +8,21 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(bodyParser.json());
+const allowedOrigins = [
+    'https://thiba.netlify.app', // Replace with your actual frontend domain
+    'http://localhost:3000' // For local development
+];
+
 app.use(cors({
-    origin: 'https://www.thiba.netlify.app'
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
 }));
+
 
 mongoose.connect(process.env.MONGO_URI, {dbName: 'selfcareData'})
     .then(() => console.log('Connected to MongoDB Atlas'))
@@ -45,6 +57,11 @@ const authMiddleware = (req, res, next) => {
         res.status(401).json({ message: 'Token is not valid' });
     }
 };
+
+// Just for checking if it actually connects to the database
+app.get('/ping', (req, res) => {
+    res.json({ message: 'Connected to backend' });
+});
 
 // Register route
 app.post('/register', async (req, res) => {
@@ -161,5 +178,5 @@ app.post('/complete-challenge', authMiddleware, async (req, res) => {
     }
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
