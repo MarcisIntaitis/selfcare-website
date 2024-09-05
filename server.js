@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'https://www.thiba.up.railway.app'
+    origin: 'https://www.thiba.netlify.app'
 }));
 
 mongoose.connect(process.env.MONGO_URI, {dbName: 'selfcareData'})
