@@ -8,9 +8,7 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({
-    origin: 'https://thiba.netlify.app/'
-}));
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URI, {dbName: 'selfcareData'})
     .then(() => console.log('Connected to MongoDB Atlas'))
