@@ -8,7 +8,7 @@ function Login() {
 
     const loginUser = async () => {
         try {
-            const response = await fetch('thiba.up.railway.app/login', {
+            const response = await fetch('https://www.thiba.up.railway.app:5000/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

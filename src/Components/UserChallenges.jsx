@@ -10,7 +10,7 @@ function UserChallenges() {
 
     const completeChallenge = async () => {
         try {
-            const response = await fetch('thiba.up.railway.app/complete-challenge', {
+            const response = await fetch('thiba.up.railway.app:5000/complete-challenge', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
