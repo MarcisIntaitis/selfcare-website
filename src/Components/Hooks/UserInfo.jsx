@@ -17,7 +17,7 @@ function UserInfo() {
                 }
         
                 try {
-                    const response = await fetch('http://localhost:5000/current-user', {
+                    const response = await fetch('thiba.up.railway.app/current-user', {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`,  // Include the token in the Authorization header
