@@ -13,11 +13,11 @@ const Register = () => {
         e.preventDefault();
         try {
             // Sending registration data to the backend
-            const response = await axios.post('https://www.thiba.up.railway.app/register', { username, email, password });
+            const response = await axios.post('https://thiba.up.railway.app/register', { username, email, password });
             
             // If registration is successful, log in the user automatically
             if (response.data.message === 'User registered successfully') {
-                const loginResponse = await axios.post('https://www.thiba.up.railway.app/login', { username, password });
+                const loginResponse = await axios.post('https://thiba.up.railway.app/login', { username, password });
                 
                 // Save the JWT token in localStorage
                 localStorage.setItem('jwtToken', loginResponse.data.token);
