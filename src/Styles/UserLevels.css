@@ -1,0 +1,45 @@
+.level-container{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.level-indicator {
+    aspect-ratio: 1/1;
+    height: 5rem;
+    margin: 1rem 1rem 0.5rem 1rem;
+    border-radius: 50%;
+    background-color: var(--background);
+    border: 4px solid var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    background-color: var(--background);
+    border: 2px solid var(--primary);
+}
+
+.current {
+    background-color: var(--background);
+    border: 2px solid var(--accent);
+}
+
+.current > svg > path {
+    fill: var(--accent);
+}
+
+svg.icon{
+    width: 70%;
+}
+
+.icon > path{
+    fill: var(--primary);
+}
+
+.icon-not-active > path{
+    fill: var(--secondary);
+}
