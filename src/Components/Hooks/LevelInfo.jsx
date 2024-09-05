@@ -15,7 +15,7 @@ function LevelInfo(levelNum, challengeNum) {
                 }
         
                 try {
-                    const response = await fetch('https://thiba.up.railway.app/levels', {
+                    const response = await fetch('https://thiba.up.railway.app/collections/levels', {
                         method: 'GET',
                     });
         
