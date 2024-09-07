@@ -1,9 +1,6 @@
 import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const local = "http://localhost:5000"
-const railway = "https://thiba.up.railway.app"
-
 function LevelInfo(levelNum, challengeNum) {
         const [levelDesc, setLevelDesc] = useState(null);
         const [challengeDesc, setChallengeDesc] = useState('');
@@ -18,7 +15,7 @@ function LevelInfo(levelNum, challengeNum) {
                 }
         
                 try {
-                    const response = await fetch(railway + '/collections/levels', {
+                    const response = await fetch('https://thiba.up.railway.app/collections/levels', {
                         method: 'GET',
                     });
         

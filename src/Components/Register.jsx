@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const local = "http://localhost:5000"
-const railway = "https://thiba.up.railway.app"
-
 const Register = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -16,11 +13,11 @@ const Register = () => {
         e.preventDefault();
         try {
             // Sending registration data to the backend
-            const response = await axios.post(railway + '/register', { username, email, password });
+            const response = await axios.post('https://thiba.up.railway.app/register', { username, email, password });
             
             // If registration is successful, log in the user automatically
             if (response.data.message === 'User registered successfully') {
-                const loginResponse = await axios.post(railway + '/login', { username, password });
+                const loginResponse = await axios.post('https://thiba.up.railway.app/login', { username, password });
                 
                 // Save the JWT token in localStorage
                 localStorage.setItem('jwtToken', loginResponse.data.token);

@@ -1,8 +1,6 @@
 import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const local = "http://localhost:5000"
-const railway = "https://thiba.up.railway.app"
 
 function UserInfo() {
         // State to store the user data
@@ -20,7 +18,7 @@ function UserInfo() {
                 }
         
                 try {
-                    const response = await fetch(railway + '/current-user', {
+                    const response = await fetch('https://thiba.up.railway.app/current-user', {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`,  // Include the token in the Authorization header
