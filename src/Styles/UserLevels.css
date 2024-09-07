@@ -6,6 +6,43 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 800px) {
+    .level-indicator{
+        height: 4rem !important;
+        margin: 1rem 0.75rem 0.5rem 0.75rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .level-indicator{
+        height: 3rem !important;
+        margin: 1rem 0.5rem 0.5rem 0.5rem !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .level-indicator{
+        height: 2.3rem !important;
+        margin: 1rem 0.4rem 0.5rem 0.4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .level-indicator{
+        height: 2rem !important;
+        margin: 1rem 0.55rem 0.5rem 0.65rem !important;
+        border: 2px solid var(--secondary) !important;
+    }
+    .active {
+        border: 2px solid var(--primary) !important;
+    }
+    
+    .current {
+        border: 2px solid var(--accent) !important;
+    }
+}
+
+
 .level-indicator {
     aspect-ratio: 1/1;
     height: 5rem;
@@ -16,16 +53,72 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.level-indicator::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.active:hover::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(204, 253, 255) !important;
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.current:hover::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(240, 190, 255) !important;
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.active::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.current::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
 }
 
 .active {
     background-color: var(--background);
-    border: 2px solid var(--primary);
+    border: 4px solid var(--primary);
 }
 
 .current {
     background-color: var(--background);
-    border: 2px solid var(--accent);
+    border: 4px solid var(--accent);
 }
 
 .current > svg > path {

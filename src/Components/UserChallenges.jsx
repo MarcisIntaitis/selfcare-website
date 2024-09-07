@@ -3,6 +3,9 @@ import UserInfo from './Hooks/UserInfo'
 import LevelInfo from './Hooks/LevelInfo'
 import '../Styles/UserChallenges.css'
 
+const local = "http://localhost:5000"
+const railway = "https://thiba.up.railway.app"
+
 function UserChallenges() {
     const { level, challenge } = UserInfo(); // assuming UserInfo provides userId as well
     const { levelDesc, challengeDesc } = LevelInfo(level - 1, challenge - 1);
@@ -10,7 +13,7 @@ function UserChallenges() {
 
     const completeChallenge = async () => {
         try {
-            const response = await fetch('https://thiba.up.railway.app/complete-challenge', {
+            const response = await fetch(railway + '/complete-challenge', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const local = "http://localhost:5000"
+const railway = "https://thiba.up.railway.app"
+
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -8,7 +11,7 @@ function Login() {
 
     const loginUser = async () => {
         try {
-            const response = await fetch('https://thiba.up.railway.app/login', {
+            const response = await fetch(railway + '/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
