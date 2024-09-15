@@ -10,7 +10,7 @@ function UserChallenges() {
 
     const completeChallenge = async () => {
         try {
-            const response = await fetch('https://thiba.up.railway.app/complete-challenge', {
+            const response = await fetch('https://selfcare-website.onrender.com/complete-challenge', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

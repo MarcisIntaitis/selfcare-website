@@ -15,7 +15,7 @@ function LevelInfo(levelNum, challengeNum) {
                 }
         
                 try {
-                    const response = await fetch('https://thiba.up.railway.app/collections/levels', {
+                    const response = await fetch('https://selfcare-website.onrender.com/collections/levels', {
                         method: 'GET',
                     });
         

@@ -1,0 +1,49 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-main{
+    display: flex;
+    width:60rem;
+    height: fit-content;
+    background-color: red;
+    border-radius: 5px;
+    align-items: center;
+    padding: 3rem
+}
+
+.register-left{
+    width: 40%;
+}
+
+.register-left h1 {
+    font-size: 3rem;
+}
+
+.register-left p{
+    font-size: 1.3rem;
+}
+
+.register-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+form{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 70%;
+    height: 2rem;
+}

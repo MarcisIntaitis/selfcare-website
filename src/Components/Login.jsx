@@ -8,7 +8,7 @@ function Login() {
 
     const loginUser = async () => {
         try {
-            const response = await fetch('https://thiba.up.railway.app/login', {
+            const response = await fetch('https://selfcare-website.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,6 +46,7 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <button onClick={loginUser}>Login</button>
+            <p>Don't have an account? <a href='/register'>Register</a></p>
         </div>
     );
 }
